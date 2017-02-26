@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class NintexPage {
+export class Ng2appPage {
   navigateTo() {
     return browser.get('/');
   }

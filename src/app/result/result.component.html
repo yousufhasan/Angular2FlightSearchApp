@@ -1,0 +1,29 @@
+
+<div class="table-responsive result-grid"> 
+    <table class="table table-bordered" *ngIf="result">
+        <thead>
+            <tr>
+                <th>{{ 'Logo' | translate }}</th>
+                <th>{{ 'Airline Name'  | translate }}</th>
+                <th>{{ 'Inbound Flight Duration'  | translate }}</th>
+                <th>{{ 'Outbound Flight Duration'  | translate }}</th>
+                <th>{{ 'Total amount in USD'  | translate }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let result of result">
+                <td> <img src='{{result.AirlineLogoAddress}}' alt={{result.AirlineName}} /></td>
+                <td>{{result.AirlineName}}</td>
+                <td>{{result.InboundFlightsDuration}}</td>
+                <td>{{result.OutboundFlightsDuration}}</td>
+                <td>${{result.TotalAmount}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="error_message" *ngIf="message">
+     {{message || translate}}
+    </div>
+  
+</div>
+

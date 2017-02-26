@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+ body {
+     height: 100%;
+     margin: 0px;
+     padding: 0px;
+     font-family: Roboto, sans-serif;
+     background-color: #fff;
+ }
+.btn-primary {
+  background-color: #555;
+}
+.md-form label {
+	font-weight: normal;
+}
+.card-block {
+    padding: 1.25rem;
+}
+
+.result-grid {
+	margin: 40px 0;
+}
+th,td {
+	text-align: center;
+}
+.error_message {
+    color: red;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+

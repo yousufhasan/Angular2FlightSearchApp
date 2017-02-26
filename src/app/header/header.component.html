@@ -1,0 +1,10 @@
+<div class="btn-group">
+    <button *ngFor="let lang of supportedLanguages"
+      (click)="selectLang(lang.value)"
+      class="btn btn-default" [class.btn-primary]="isCurrentLang(lang.value)">
+      {{ lang.display }}
+    </button>
+</div> 
+<div class="divider-new">
+	<h2 class="h2-responsive wow fadeInDown">{{'Flight Search Application' | translate }}</h2>
+</div>

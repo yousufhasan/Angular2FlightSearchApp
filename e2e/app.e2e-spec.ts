@@ -1,10 +1,10 @@
-import { NintexPage } from './app.po';
+import { Ng2appPage } from './app.po';
 
-describe('nintex App', function() {
-  let page: NintexPage;
+describe('ng2 App', function() {
+  let page: Ng2appPage;
 
   beforeEach(() => {
-    page = new NintexPage();
+    page = new Ng2appPage();
   });
 
   it('should display message saying app works', () => {

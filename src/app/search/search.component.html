@@ -1,0 +1,53 @@
+<div class="container">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="card wow zoomIn">
+			<div class="card-block">
+				<div class="text-center">
+				    <h3><i class="fa fa-search"></i> {{ 'Flight Search' | translate }}</h3>
+				     <hr />
+				  </div>
+				<form (ngSubmit)="onSubmit($event)" [formGroup]="searchForm">
+					<div class="md-form">
+					    <i class="fa fa-plane  prefix"></i>
+					    <input type="text" id="depCode" class="form-control"
+			              formControlName="depCode">
+					    <label for="depCode"> {{'Departure airport code' | translate }} </label>
+					</div>
+					<div class="md-form">
+					    <i class="fa fa-plane prefix"></i>
+					    <input type="text" id="arrCode" class="form-control"
+			              formControlName="arrCode">
+					    <label for="arrCode"> {{'Arrival airport code' | translate }} </label>
+					</div>
+					<div class="md-form">
+					    <i class="fa fa-calendar prefix"></i>
+					    <input type="text" id="depDate" class="form-control"  
+				        formControlName="depDate">
+					    <label for="depDate">{{'Departure Date' | translate }} (dd/mm/yyyy)</label>
+					</div>
+					 <div class="error" *ngIf="searchForm.get('depDate').touched && searchForm.get('retDate').touched 
+					  && searchForm.hasError('notGreater') || searchForm.get('depDate').touched && searchForm.get('depDate').invalid">
+			         		{{'Please enter a valid date format and make sure Departure Date is smaller than or equal to Return Date' | translate}}.
+			        </div>
+			  		
+					<div class="md-form">
+					    <i class="fa fa-calendar prefix"></i>
+					    <input type="text" id="retDate" class="form-control" 
+					    formControlName="retDate">
+					    <label for="retDate">{{'Return Date' | translate }} (dd/mm/yyyy)</label>
+					</div>
+					 <div class="error" *ngIf="searchForm.get('retDate').touched 
+					  && searchForm.hasError('notGreater') || searchForm.get('retDate').touched && searchForm.get('retDate').invalid">
+			         		{{'Please enter a valid date format and make sure Return Date is greater than or equal to Departure Date' | translate}}.
+			        </div>
+			      
+					<div class="text-center">
+				         <button type="submit" class="btn btn-primary waves-effect waves-light" [disabled]="!searchForm.valid">{{'Search' | translate }} </button>
+				    </div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
